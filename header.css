@@ -1,0 +1,113 @@
+/* 黑色导航栏 */
+.nav_outer{
+    display: block;
+    height:40px;
+    width: 100%;
+    background: #545652;
+    color: #D5D5D5;
+}
+
+.nav_outer>.nav_list {
+    display: inline-block;
+    width: 600px;
+    height:40px;
+}
+.nav_outer>.nav_list>#head1 {
+    display: block;
+    height:40px;
+}
+.nav_outer>.nav_list>#head1>li {
+    display:inline-block;
+    margin:10px;
+}
+
+.nav_outer>.login {
+    display: block;
+    width: 200px;
+    height:40px;
+    float: right;
+}
+.nav_outer>.login>a {
+    display:inline-block;
+    margin:10px;
+}
+/* 主导航栏 */
+.nav_inner{
+    display: block;
+    height: 120px;
+    width: 100%;
+    background: #f0f3f5;
+    color: #2277AA;
+    padding: 0px 11% 0px 11%;
+}
+
+.nav_inner>.logo {
+    display: inline-block;
+    width: 145px;
+    height: 56px;
+    line-height: 56px;
+    margin-top: 10px;
+}
+.nav_inner>.logo>a {
+    position: relative;
+    top: 5px;
+    color:#33a8ff;
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.nav_inner>.searcher{
+    display: inline-block;
+    width: 600px;
+    height: 56px;
+    margin: 0px 0px 0px 40px;
+}
+.nav_inner>.searcher>input {
+    width: 450px;
+    height: 35px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    padding-left: 13px;
+    font-size: 14px;
+    box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, 0.4);
+}
+.nav_inner>.searcher>button {
+    position: relative;
+    top: 2px;
+    right: 5px;
+    height: 35px;
+    width: 37px;
+    background:#9ba4ab;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+}
+.nav_inner>.searcher>button:before {
+    content: '\f002';
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #f0f3f5;
+}
+
+.nav_inner>.list2019 {
+    float: right;
+}
+.nav_inner>.list2019>a>img {
+    height: 96px;
+    position: relative;
+    top:15px;
+    right: 250px;
+}
+
+.nav_inner>.inner_list>#head2 {
+    display: block;
+    height:40px;
+    border-top: 1px solid rgba(200, 200, 200, 0.4);
+}
+.nav_inner>.inner_list>#head2>li {
+    display:inline-block;
+    margin:13px;
+    font-size: 14px;
+}

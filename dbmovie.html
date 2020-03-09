@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豆瓣电影</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="header.css" rel="stylesheet" type="text/css"/>
+    <link href="container.css" rel="stylesheet" type="text/css"/>
+    <link href="footer.css" rel="stylesheet" type="text/css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 12px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav_outer"> 
+            <div class="nav_list">
+                <ul id="head1"></ul>
+            </div>
+            <div class="login">
+                <a>下载豆瓣客户端</a>
+                <a>登录/注册</a>
+            </div>
+        </div>
+        <div class="nav_inner">
+            <div class="logo">
+                <a href="https://move.douban.com">豆瓣电影</a>
+            </div>
+            <form class="searcher">
+                <input placeholder="搜索电影、电视剧、综艺、影人">
+                <button type="submit"></button>
+            </form>
+            <div class="list2019">
+                <a href="https://movie.douban.com/annual/2019?source=movie_navigation">
+                    <img src="https://img3.doubanio.com/dae/accounts/resources/f5f3d66/movie/assets/annual_2019.png">
+                </a>
+            </div>
+            <div class="inner_list">
+                <ul id="head2"></ul>
+            </div>   
+        </div>
+    </header>
+    <div class="container">
+        <div class="suggested_menu">
+            <div class="eight_qs">豆瓣电影评分八问</div>
+            <div class="week_flavor">
+                <h2>一周口碑榜
+                    <span>更多榜单</span>
+                </h2>
+            </div>
+            <ol class="head3">
+            </ol>
+        </div>
+        <div class="main">zhu
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="left_foot">
+            © 2005－2020 douban.com, all rights reserved 北京豆网科技有限公司
+        </div>
+        <div class="right_foot">
+            关于豆瓣 在豆瓣工作 联系我们 法律声明 帮助中心 移动应用 豆瓣广告
+            <ul class="head_last"></ul>
+        </div>
+    </footer>
+
+    <script>
+        const headlines1 = ['豆瓣','读书','电影','音乐','同城','小组','阅读','FM','时间','豆品','更多'];
+        const headlines2 = ['影讯&购票','选电影','电视剧','排行榜','分类','影评','2019年度榜单','2019书影音报告']
+        function liCreator(idanchor,list) {
+            // 要求：第一个实参为字符串类型
+            let head = document.querySelector(`#${idanchor}`);
+            let length = list.length;
+            for (let i=0;i<length;i++){
+                let li = document.createElement('li');
+                let a = document.createElement('a');
+                let content = document.createTextNode(list[i]);
+                head.appendChild(li);
+                li.appendChild(a);
+                a.appendChild(content);
+            }
+        }
+        liCreator('head1',headlines1);
+        liCreator('head2',headlines2);
+    </script>
+</body>
+</html>

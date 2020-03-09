@@ -1,0 +1,15 @@
+.container{
+    padding: 0px 11% 0px 11%;
+}
+
+.main{
+    float:left;
+    /* 有意思的一点，父元素设置padding减少子元
+    素可获得宽度后，子元素的宽度百分比是按剩余部分计算的 */
+    width: 65%;
+}
+
+.suggested_menu{
+    float:right;
+    width: 25%;
+}
