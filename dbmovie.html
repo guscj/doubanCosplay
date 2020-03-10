@@ -8,6 +8,7 @@
     <link href="header.css" rel="stylesheet" type="text/css"/>
     <link href="container.css" rel="stylesheet" type="text/css"/>
     <link href="footer.css" rel="stylesheet" type="text/css"/>
+    <link href="main.css" rel="stylesheet" type="text/css"/>
     <style>
         * {
             margin: 0;
@@ -35,7 +36,7 @@
         </div>
         <div class="nav_inner">
             <div class="logo">
-                <a href="https://move.douban.com">豆瓣电影</a>
+                <a href="https://move.douban.com/">豆瓣电影</a>
             </div>
             <form class="searcher">
                 <input placeholder="搜索电影、电视剧、综艺、影人">
@@ -55,22 +56,16 @@
         <div class="suggested_menu">
             <div class="eight_qs">豆瓣电影评分八问</div>
             <div class="week_flavor">
-                <h2>一周口碑榜
-                    <span>更多榜单</span>
-                </h2>
+                <span style="font-size: 16px;color:black">一周口碑榜</span>
+                <span style="font-size: 13px;margin-left: 6px;">更多榜单>></span>
             </div>
-            <ol class="head3">
+            <ol id="head3">
             </ol>
-        </div>
-        <div class="main">zhu
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
+        </div>  
+        <div class="main">
+            <div class="hot_movie"></div>
+            <div class="hot_recommend"></div>
+            <div class="best_popular"></div>
         </div>
     </div>
     <footer class="footer">
@@ -86,14 +81,20 @@
     <script>
         const headlines1 = ['豆瓣','读书','电影','音乐','同城','小组','阅读','FM','时间','豆品','更多'];
         const headlines2 = ['影讯&购票','选电影','电视剧','排行榜','分类','影评','2019年度榜单','2019书影音报告']
-        function liCreator(idanchor,list) {
-            // 要求：第一个实参为字符串类型
+        const headlines3 = ['南山的部长们','剩女','狂躁节拍','勇者斗恶龙 你的故事','雷米奇遇记','内心之光','维塔利娜·瓦雷拉','系统破坏者','遗愿清单','安尼亚拉号'];
+        function liCreator(idanchor,list,bool=false) {
+            // 要求：第一个实参为字符串类型的id值
             let head = document.querySelector(`#${idanchor}`);
             let length = list.length;
             for (let i=0;i<length;i++){
                 let li = document.createElement('li');
                 let a = document.createElement('a');
-                let content = document.createTextNode(list[i]);
+                let content
+                if(bool){
+                    content = document.createTextNode(`${i+1}`+' '+list[i]);
+                }else{
+                    content = document.createTextNode(list[i]);
+                }
                 head.appendChild(li);
                 li.appendChild(a);
                 a.appendChild(content);
@@ -101,6 +102,7 @@
         }
         liCreator('head1',headlines1);
         liCreator('head2',headlines2);
+        liCreator('head3',headlines3,true);
     </script>
 </body>
 </html>
