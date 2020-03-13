@@ -4,3 +4,8 @@
     素可获得宽度后，子元素的宽度百分比是按剩余部分计算的 */
     width: 65%;
 }
+/* 热门电影区 */
+.main>.hot_movie>.hot_title>#head4>li{
+    display: inline-block;
+    margin-left: 12px;
+}

@@ -24,6 +24,44 @@
     </style>
 </head>
 <body>
+    <template id="ppt1">
+        <style>
+            div a{
+                display: inline-block;
+                width: 115px;
+                height: 170px;
+                text-align: center;
+            }
+            div a:first-child{
+                font-size: 13px;
+                color: #3377aa;
+            }
+            div a:last-child{
+                font-size: 13px;
+                color: #e05015;
+                margin-left: 5px;
+        </style>
+        <div>
+            <content select="page1"></content>
+            <content select="page2"></content>
+        </div>
+        <script>
+        </script>
+    </template>
+    <script>
+        class Ppt extends HTMLElement { 
+            constructor() { 
+                super();
+                //获取组件模板 
+                const content = document.querySelector('#ppt1').content;
+                //创建影子DOM节点 
+                const shadowDOM = this.attachShadow({ mode: 'open' }); 
+                //将模板添加到影子DOM上 
+                shadowDOM.appendChild(content.cloneNode(true));
+            } 
+        } 
+        customElements.define('draw-board', Ppt);    
+    </script>
     <header>
         <div class="nav_outer"> 
             <div class="nav_list">
@@ -63,7 +101,16 @@
             </ol>
         </div>  
         <div class="main">
-            <div class="hot_movie"></div>
+            <div class="hot_movie" style="margin-top: 50px;margin-bottom: 10px;">
+                <div class="hot_title" style="font-size: 16px;color:#111111">最近热门电影
+                    <ul id="head4" style="display:inline-block;font-size:13px;color:#9b9b9b">
+                        <li class="choose">热门</li>
+                        <li>最新</li>
+                    </ul>
+                    <span style="float: right;font-size: 13px;color: #666699;">更多>></span> 
+                </div>
+                <draw-board></draw-board>
+            </div>
             <div class="hot_recommend"></div>
             <div class="best_popular"></div>
         </div>
@@ -77,32 +124,7 @@
             <ul class="head_last"></ul>
         </div>
     </footer>
-
-    <script>
-        const headlines1 = ['豆瓣','读书','电影','音乐','同城','小组','阅读','FM','时间','豆品','更多'];
-        const headlines2 = ['影讯&购票','选电影','电视剧','排行榜','分类','影评','2019年度榜单','2019书影音报告']
-        const headlines3 = ['南山的部长们','剩女','狂躁节拍','勇者斗恶龙 你的故事','雷米奇遇记','内心之光','维塔利娜·瓦雷拉','系统破坏者','遗愿清单','安尼亚拉号'];
-        function liCreator(idanchor,list,bool=false) {
-            // 要求：第一个实参为字符串类型的id值
-            let head = document.querySelector(`#${idanchor}`);
-            let length = list.length;
-            for (let i=0;i<length;i++){
-                let li = document.createElement('li');
-                let a = document.createElement('a');
-                let content
-                if(bool){
-                    content = document.createTextNode(`${i+1}`+' '+list[i]);
-                }else{
-                    content = document.createTextNode(list[i]);
-                }
-                head.appendChild(li);
-                li.appendChild(a);
-                a.appendChild(content);
-            }
-        }
-        liCreator('head1',headlines1);
-        liCreator('head2',headlines2);
-        liCreator('head3',headlines3,true);
-    </script>
+    <script type="text/javascript" src="master.js"></script>
+    <script type="text/javascript" src="vice.js"></script>
 </body>
 </html>
