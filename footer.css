@@ -7,14 +7,16 @@
     /* 有意思的一点，父元素设置padding减少子元素可获得宽度后，
     子元素的宽度百分比是按剩余部分计算的 */
     width: 50%;
-    border-top: 1px solid rgba(200, 200, 200, 0.4);
+    border-top: 1px dashed rgba(200, 200, 200, 0.4);
     color: gray;
+    margin-bottom: 10px;
 }
 
 .right_foot{
     float:right;
     width: 50%;
-    border-top: 1px solid rgba(200, 200, 200, 0.4);
+    border-top: 1px dashed rgba(200, 200, 200, 0.4);
     color: #2277AA;
     cursor: pointer;
+    margin-bottom: 10px;
 }

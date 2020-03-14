@@ -3,9 +3,89 @@
     /* 有意思的一点，父元素设置padding减少子元
     素可获得宽度后，子元素的宽度百分比是按剩余部分计算的 */
     width: 65%;
+    overflow: hidden;
 }
 /* 热门电影区 */
 .main>.hot_movie>.hot_title>#head4>li{
     display: inline-block;
     margin-left: 12px;
+    cursor: pointer;
+}
+/* 轮播区 */
+#ppt1,#ppt2{
+    width: 1500px;
+}
+#page1,#page3{
+    width:700px;
+    float: left;
+}
+
+#page2,#page4{
+    width:700px;
+    float: left;   
+}
+
+/* 交互效果:类似选项卡 */
+.wrapper{
+    height:390px;
+    border-top: 1px solid rgba(200, 200, 200, 0.4);
+    margin-top: 10px;
+}
+.wrapper>div{
+    display: none;
+    transition: 0.5s left ease-in-out;
+    position:relative;
+}
+.choose{
+    color:black;
+}
+.wrapper>.active{
+    display: block;
+    left:0px;
+}
+/* 交互效果:翻页 */
+#pageturning{
+    width: 96%;
+    height: 25px;
+    text-align: center;
+}
+#pageturning>*{
+    display: inline-block;
+}
+#pageturning li{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: darkgray;
+    margin: 0 15px 0 15px;
+    position: relative;
+    top:-4px;
+    cursor: pointer;
+}
+#pageturning a:nth-of-type(1){
+    width: 16px;
+    border-radius: 50%;
+    height: 16px;
+    margin: 0 15px 0 15px;
+}
+#pageturning a:nth-of-type(1)::before{
+    content: '\f0a8';
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: rgb(51, 119, 170);
+}
+#pageturning a:nth-of-type(2){
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 15px 0 15px;
+}
+#pageturning a:nth-of-type(2)::before{
+    content: '\f0a9';
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: rgb(51, 119, 170);
+}
+#pageturning .choose1{
+    background-color: #6198d7;
 }

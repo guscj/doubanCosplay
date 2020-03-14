@@ -24,44 +24,6 @@
     </style>
 </head>
 <body>
-    <template id="ppt1">
-        <style>
-            div a{
-                display: inline-block;
-                width: 115px;
-                height: 170px;
-                text-align: center;
-            }
-            div a:first-child{
-                font-size: 13px;
-                color: #3377aa;
-            }
-            div a:last-child{
-                font-size: 13px;
-                color: #e05015;
-                margin-left: 5px;
-        </style>
-        <div>
-            <content select="page1"></content>
-            <content select="page2"></content>
-        </div>
-        <script>
-        </script>
-    </template>
-    <script>
-        class Ppt extends HTMLElement { 
-            constructor() { 
-                super();
-                //获取组件模板 
-                const content = document.querySelector('#ppt1').content;
-                //创建影子DOM节点 
-                const shadowDOM = this.attachShadow({ mode: 'open' }); 
-                //将模板添加到影子DOM上 
-                shadowDOM.appendChild(content.cloneNode(true));
-            } 
-        } 
-        customElements.define('draw-board', Ppt);    
-    </script>
     <header>
         <div class="nav_outer"> 
             <div class="nav_list">
@@ -109,7 +71,22 @@
                     </ul>
                     <span style="float: right;font-size: 13px;color: #666699;">更多>></span> 
                 </div>
-                <draw-board></draw-board>
+                <div class="wrapper">
+                    <div id="ppt1" class="active">
+                        <div id="page1"></div>
+                        <div id="page2"></div>
+                    </div>
+                    <div id="ppt2">
+                        <div id="page3"></div>
+                        <div id="page4"></div>
+                    </div>
+                </div>
+                <div id="pageturning">
+                    <a></a>
+                    <li class="choose1"></li>
+                    <li></li>
+                    <a></a>
+                </div>
             </div>
             <div class="hot_recommend"></div>
             <div class="best_popular"></div>
