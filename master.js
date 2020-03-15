@@ -76,5 +76,43 @@ atags[1].onclick=function(){
     lis1[pnum].classList.add('choose1');
     pagenow[0].setAttribute('style',`left:-${700*pnum}px;`);
 }
-    
 
+//自动播放幻灯片
+    let num = 0;
+    let changebutton = document.querySelectorAll('#pagechange>a');
+    let pics = document.querySelector('#list_pic');
+    let lis2 = document.querySelectorAll('#list_pic>li'); 
+    let shownum = document.querySelector('#pagenum div');
+    changebutton[0].onclick=function(){
+        let numtrue = num-1;
+        if(numtrue<0){
+            num=lis2.length-1;
+            pics.setAttribute('style',`left:-${675*num}px;`);
+        }
+        else{
+            num = Math.abs((num-1)%lis2.length);
+            pics.setAttribute('style',`left:-${675*num}px;`);
+        } 
+        shownum.textContent= `${num+1}`;
+    }
+    changebutton[1].onclick=function(){
+        num = Math.abs((num+1)%lis2.length);
+        pics.setAttribute('style',`left:-${675*num}px;`);
+        shownum.textContent= `${num+1}`;
+    }
+        // 移入时取消定时器
+    let clock = setInterval(function(){
+        num = Math.abs((num+1)%lis2.length);
+        pics.setAttribute('style',`left:-${675*num}px;`);
+        shownum.textContent= `${num+1}`;
+    },2400);
+    pics.addEventListener('mouseover',function(event){
+        clearInterval(clock);
+    });
+    pics.addEventListener('mouseleave',function(){
+        clock = setInterval(function(){
+            num = Math.abs((num+1)%lis2.length);
+            pics.setAttribute('style',`left:-${675*num}px;`);
+            shownum.textContent= `${num+1}`;
+        },2000);
+    });

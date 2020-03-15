@@ -25,7 +25,7 @@
     float: left;   
 }
 
-/* 交互效果:类似选项卡 */
+    /* 交互效果:类似选项卡 */
 .wrapper{
     height:390px;
     border-top: 1px solid rgba(200, 200, 200, 0.4);
@@ -88,4 +88,90 @@
 }
 #pageturning .choose1{
     background-color: #6198d7;
+}
+/* 自动轮播 */
+.hot_recommend #pagechange a:nth-of-type(1)::before{
+    content: '\f0a8';
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: rgb(51, 119, 170);
+}
+.hot_recommend #pagechange a:nth-of-type(2)::before{
+    content: '\f0a9';
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: rgb(51, 119, 170);
+}
+.wrapper1{
+    height: 240px;
+    border-top: 1px solid rgba(200, 200, 200, 0.4);
+    margin-top: 10px;
+}
+.wrapper1 #list_pic{
+    padding-left:20px ;
+    width: 2720px;
+    list-style:none;
+    position: relative;
+    height: 240px;
+    margin-top: 10px;
+}
+.wrapper1 #list_pic:hover{
+    cursor: pointer;
+    animation-play-state: paused;
+}
+.wrapper1 #list_pic li{
+    width:675px;
+    height:240px;
+    float: left;
+}
+/* 影评区 */
+.critic{
+    margin-bottom: 70px;
+}
+.article {
+    height: 118px;
+    margin: 20px 0;
+    border-top:1px solid rgba(200, 200, 200, 0.4);
+    padding-top: 20px;
+}
+.pic{
+    float: left;
+}
+.pic img{
+    height: 101px;
+    width: 68px;
+}
+.criticText{
+    float: left;
+    height: 101px;
+    margin-left: 20px;
+}
+.headline{
+    font-size: 14px;
+    margin: 10px;
+}
+.who{
+    font-size: 13px;
+    margin: 10px;
+    color: #666666;
+}
+p{
+    width: 400px;
+    color: #000;
+    margin: 10px;
+    word-break: break-all;
+}
+.stars4{
+    display: inline-block;
+    width: 55px;
+    height: 11px;
+    background-position: 0 -22px;
+    background-image: url("stars.png");
+}
+.stars5{
+    display: inline-block;
+    width: 55px;
+    height: 11px;
+    background-position: 0 0;
+    background-image: url("stars.png");
 }

@@ -39,7 +39,7 @@
                 <a href="https://move.douban.com/">豆瓣电影</a>
             </div>
             <form class="searcher">
-                <input placeholder="搜索电影、电视剧、综艺、影人">
+                <input style="outline:none;" placeholder="搜索电影、电视剧、综艺、影人">
                 <button type="submit"></button>
             </form>
             <div class="list2019">
@@ -63,7 +63,7 @@
             </ol>
         </div>  
         <div class="main">
-            <div class="hot_movie" style="margin-top: 50px;margin-bottom: 10px;">
+            <div class="hot_movie" style="margin-top: 50px;margin-bottom: 50px;">
                 <div class="hot_title" style="font-size: 16px;color:#111111">最近热门电影
                     <ul id="head4" style="display:inline-block;font-size:13px;color:#9b9b9b">
                         <li class="choose">热门</li>
@@ -88,8 +88,55 @@
                     <a></a>
                 </div>
             </div>
-            <div class="hot_recommend"></div>
-            <div class="best_popular"></div>
+            <div class="hot_recommend" style="margin-bottom: 50px;">
+                <div style="font-size: 16px;color:#111111;margin:10px 0;">热门推荐
+                    <span id="pagechange" style="display:inline-block;float:right;margin: 0 5px;" >
+                        <a></a>
+                        <a></a>
+                    </span>
+                    <div id="pagenum" style="display:inline-block;font-size:13px;float:right;margin-right: 10px;">
+                        <div style="display:inline-block">1</div>/3
+                    </div>
+                </div>
+                <div class="wrapper1">
+                    <ul id="list_pic">
+                        <li><img src="pic0.png"></li>
+                        <li><img src="pic1.png"></li>
+                        <li><img src="pic2.png"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="best_popular">
+                <div class="popular_title" style="margin-top:40px;font-size: 16px;color:#111111">最近受欢迎影评
+                    <span style="cursor:pointer;margin-left:30px;font-size: 13px;color: #666699;">更多热门影评>> 新片影评>></span> 
+                </div>
+                <div class="critic">
+                  <div class="article">
+                    <div class="pic">
+                        <img src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565607356.webp">
+                    </div>
+                    <div class="criticText">
+                        <div class="headline">永远不要嘲笑“站着的人”</div>
+                        <div class="who">发条大丑橘 评论 《隐秘的生活》<span class="stars4"></span></div>
+                        <p>
+                            这个2月社会上发生的事情太多太多，以至于每次想写点什么，又都无法沉下心来写完。 最近看的电影也不多...
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="article">
+                    <div class="pic">
+                        <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2173360401.webp">
+                    </div>
+                    <div class="criticText">
+                        <div class="headline">虚假的强力----浅析《PTU》的叙事</div>
+                        <div class="who">粉粿爵士 评论 《机动部队》 <span class="stars5"></span></div>
+                        <p>这是影片中最精彩的一场戏，在这场戏中，我们看到，肥沙，马尾，衬衣男呈一个三角形分布，同时不间断地响起电话铃声...</p>
+                    </div>
+                  </div>   
+                    
+                </div>
+            </div>
         </div>
     </div>
     <footer class="footer">
